@@ -11,14 +11,10 @@ public class Main {
 //        CharSequence stroka = "e02fd0e4-00fd-090A-ca30-0d00a0038ba0";
         Pattern pattern = Pattern.compile("[a-f|A-F|\\d]{8}(-)(([a-f|A-F|\\d]){4}(-)){3}[a-f|A-F|\\d]{12}");
         Pattern pattern2 = Pattern.compile("\\([a-f|A-F|\\d]{8}(-)(([a-f|A-F|\\d]){4}(-)){3}[a-f|A-F|\\d]{12}\\)");
-        Pattern pattern3 = Pattern.compile("[a-f|A-F|\\d]{8}(([a-f|A-F|\\d]){4}){3}[a-f|A-F|\\d]{12}");
-        Pattern pattern4 = Pattern.compile("\\([a-f|A-F|\\d]{8}(([a-f|A-F|\\d]){4}){3}[a-f|A-F|\\d]{12}\\)");
         Matcher matcher = pattern.matcher(stroka);
         Matcher matcher2 = pattern2.matcher(stroka);
-        Matcher matcher3 = pattern3.matcher(stroka);
-        Matcher matcher4 = pattern4.matcher(stroka);
-        if (matcher.matches() || matcher2.matches() || matcher3.matches() || matcher4.matches()){
-            if (matcher2.matches() || matcher4.matches()){
+        if (matcher.matches() || matcher2.matches()){
+            if (matcher2.matches()){
                 System.out.println("Данные имеют верный формат и содержат скобки");
             } else{
                 System.out.println("Данные имеют верный формат и НЕ содержат скобки");
